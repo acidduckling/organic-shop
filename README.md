@@ -9,7 +9,7 @@ sudo i -g firebase-tools
 # sign in to Google
 firebase login
 
-# Initiate project
+# Initiate project (ensure that dist is entered for public directory)
 firebase init
 
 # build the project
