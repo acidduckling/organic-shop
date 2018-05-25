@@ -1,5 +1,27 @@
 # OrganicShop
 
+## Firebase deployment instructions
+
+```bash
+# Ensure Firebase tools are installed
+sudo i -g firebase-tools
+
+# sign in to Google
+firebase login
+
+# Initiate project
+firebase init
+
+# build the project
+ng build --prod
+
+# Deploy the dist folder
+firebase deploy
+
+# Open the site!
+firebase open hosting:site
+```
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.7.4.
 
 ## Development server
