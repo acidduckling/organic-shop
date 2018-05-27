@@ -15,13 +15,13 @@
 
       <li class="nav-item dropdown" ngbDropdown>
         <a ngbDropdownToggle class="nav-link dropdown-toggle" id="navbarDropdown" role="button">
-          Dropdown
+          Username
         </a>
         <div ngbDropdownMenu class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" [routerLink]="['/my-orders']">My Orders</a>
-          <a class="dropdown-item" [routerLink]="['/manage-orders']">Manage Orders</a>
-          <a class="dropdown-item" [routerLink]="['/manage-products']">Manage Products</a>
-          <a class="dropdown-item" [routerLink]="['/log-out']">Log Out</a>
+          <a class="dropdown-item" [routerLink]="['/my/orders']">My Orders</a>
+          <a class="dropdown-item" [routerLink]="['/admin/orders']">Manage Orders</a>
+          <a class="dropdown-item" [routerLink]="['/admin/products']">Manage Products</a>
+          <a class="dropdown-item">Log Out</a>
         </div>
       </li>
     </ul>
