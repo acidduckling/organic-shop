@@ -9,6 +9,7 @@ import { AdminProductsComponent } from './app/admin/admin-products/admin-product
 import { AdminOrdersComponent } from './app/admin/admin-orders/admin-orders.component';
 import { MyOrdersComponent } from './app/my-orders/my-orders.component';
 import { AuthGuard } from './app/auth.guard';
+import { AdminAuthGuard } from './app/admin-auth.guard';
 
 export const appRoutes: Routes = [
   /* Anonymous routes */
@@ -48,11 +49,11 @@ export const appRoutes: Routes = [
   {
     path: 'admin/products',
     component: AdminProductsComponent,
-    canActivate: [AuthGuard]
+    canActivate: [AuthGuard, AdminAuthGuard]
   },
   {
     path: 'admin/orders',
     component: AdminOrdersComponent,
-    canActivate: [AuthGuard]
+    canActivate: [AuthGuard, AdminAuthGuard]
   }
 ];
