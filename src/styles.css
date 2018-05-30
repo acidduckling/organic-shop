@@ -2,6 +2,7 @@
 body {
   padding-top: 80px;
 }
-.dropdown-toggle {
+.dropdown-toggle,
+.navbar-nav a {
   cursor: pointer;
 }
