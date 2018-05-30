@@ -8,11 +8,17 @@ import { LoginComponent } from './app/login/login.component';
 import { AdminProductsComponent } from './app/admin/admin-products/admin-products.component';
 import { AdminOrdersComponent } from './app/admin/admin-orders/admin-orders.component';
 import { MyOrdersComponent } from './app/my-orders/my-orders.component';
+import { AuthGuard } from './app/auth.guard';
 
 export const appRoutes: Routes = [
+  /* Anonymous routes */
   {
-    path: 'home',
+    path: '',
     component: HomeComponent
+  },
+  {
+    path: 'login',
+    component: LoginComponent
   },
   {
     path: 'products',
@@ -22,33 +28,31 @@ export const appRoutes: Routes = [
     path: 'shopping-cart',
     component: ShoppingCartComponent
   },
+  /* Authenticated Routes */
   {
     path: 'check-out',
-    component: CheckOutComponent
+    component: CheckOutComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'order-success',
-    component: OrderSuccessComponent
+    component: OrderSuccessComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'my/orders',
-    component: MyOrdersComponent
+    component: MyOrdersComponent,
+    canActivate: [AuthGuard]
   },
-  {
-    path: 'login',
-    component: LoginComponent
-  },
+  /* Admin Routes */
   {
     path: 'admin/products',
-    component: AdminProductsComponent
+    component: AdminProductsComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'admin/orders',
-    component: AdminOrdersComponent
-  },
-  {
-    path: '',
-    redirectTo: 'home',
-    pathMatch: 'full'
+    component: AdminOrdersComponent,
+    canActivate: [AuthGuard]
   }
 ];
