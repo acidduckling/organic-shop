@@ -18,8 +18,6 @@ export class AdminAuthGuard implements CanActivate {
     state: RouterStateSnapshot
   ): Observable<boolean> {
     // we use switchMap to SWITCH to the NEW observable, which is returned from the userService.get() call
-    return this.auth.user$
-      .switchMap(user => this.userService.get(user.uid))
-      .map(appUser => appUser.isAdmin);
+    return this.auth.appUser$.map(appUser => appUser.isAdmin);
   }
 }
