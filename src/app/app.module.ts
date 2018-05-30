@@ -25,6 +25,8 @@ import { UserService } from './user.service';
 import { AdminAuthGuard } from './admin-auth.guard';
 import { ProductFormComponent } from './admin/product-form/product-form.component';
 import { CategoryService } from './category.service';
+import { FormsModule } from '@angular/forms';
+import { ProductService } from './product.service';
 
 @NgModule({
   declarations: [
@@ -47,11 +49,13 @@ import { CategoryService } from './category.service';
     AngularFireDatabaseModule,
     AngularFireAuthModule,
     NgbModule.forRoot(),
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    FormsModule
   ],
   providers: [
     AuthService,
     CategoryService,
+    ProductService,
     UserService,
     AuthGuard,
     AdminAuthGuard
