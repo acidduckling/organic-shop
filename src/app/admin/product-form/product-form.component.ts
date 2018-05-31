@@ -10,6 +10,7 @@ import 'rxjs/add/operator/take';
   styleUrls: ['./product-form.component.css']
 })
 export class ProductFormComponent implements OnInit {
+  id: string;
   product: any = {};
   categories$;
 
@@ -21,10 +22,10 @@ export class ProductFormComponent implements OnInit {
   ) {
     this.categories$ = categoryService.getCategories();
 
-    const id = this.route.snapshot.paramMap.get('id');
-    if (id)
+    this.id = this.route.snapshot.paramMap.get('id');
+    if (this.id)
       this.productService
-        .get(id)
+        .get(this.id)
         .take(1)
         .subscribe(p => (this.product = p));
   }
@@ -32,7 +33,9 @@ export class ProductFormComponent implements OnInit {
   ngOnInit() {}
 
   save(product) {
-    this.productService.create(product);
+    if (this.id) this.productService.update(this.id, product);
+    else this.productService.create(product);
+
     this.router.navigate(['/admin/products']);
   }
 }
