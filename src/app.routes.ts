@@ -16,7 +16,7 @@ export const appRoutes: Routes = [
   /* Anonymous routes */
   {
     path: '',
-    component: HomeComponent
+    component: ProductsComponent
   },
   {
     path: 'login',
