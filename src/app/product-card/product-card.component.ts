@@ -13,5 +13,7 @@ export class ProductCardComponent {
 
   constructor(private cartService: ShoppingCartService) {}
 
-  addToCart(product) {}
+  addToCart(product) {
+    this.cartService.addToCart(product);
+  }
 }
