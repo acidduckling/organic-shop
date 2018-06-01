@@ -29,6 +29,7 @@ import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 import { UserService } from './user.service';
 import { DataTableModule } from 'angular5-data-table';
 import { ProductFilterComponent } from './products/product-filter/product-filter.component';
+import { ProductCardComponent } from './product-card/product-card.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { ProductFilterComponent } from './products/product-filter/product-filter
     AdminOrdersComponent,
     LoginComponent,
     ProductFormComponent,
-    ProductFilterComponent
+    ProductFilterComponent,
+    ProductCardComponent
   ],
   imports: [
     BrowserModule,
