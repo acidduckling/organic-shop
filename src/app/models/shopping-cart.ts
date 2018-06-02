@@ -4,7 +4,12 @@ export class ShoppingCart {
   items: ShoppingCartItem[] = [];
 
   constructor(public itemsMap: { [productId: string]: ShoppingCartItem }) {
-    for (const productId in itemsMap) this.items.push(itemsMap[productId]);
+    for (const productId in itemsMap) {
+      if (this.itemsMap.hasOwnProperty(productId)) {
+        const item = itemsMap[productId];
+        this.items.push(new ShoppingCartItem(item.product, item.quantity));
+      }
+    }
   }
 
   get totalItemsCount() {
@@ -14,5 +19,11 @@ export class ShoppingCart {
         count += this.itemsMap[productId].quantity;
     }
     return count;
+  }
+
+  get totalPrice() {
+    return this.items
+      .map(v => v.totalPrice)
+      .reduce((prev = 0, curr) => prev + curr);
   }
 }
