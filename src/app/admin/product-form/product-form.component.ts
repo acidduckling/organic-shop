@@ -12,7 +12,7 @@ import { Product } from '../../models/product';
 })
 export class ProductFormComponent implements OnInit {
   id: string;
-  product: {};
+  product: any = {};
   categories$;
 
   constructor(
