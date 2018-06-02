@@ -5,10 +5,14 @@ export class ShoppingCart {
   items: ShoppingCartItem[] = [];
 
   constructor(public itemsMap: { [productId: string]: ShoppingCartItem }) {
+    this.itemsMap = itemsMap || {};
     for (const productId in itemsMap) {
       if (this.itemsMap.hasOwnProperty(productId)) {
         const item = itemsMap[productId];
-        this.items.push(new ShoppingCartItem(item.product, item.quantity));
+        const x = new ShoppingCartItem();
+        Object.assign(x, item);
+        x.$key = productId;
+        this.items.push(x);
       }
     }
   }
@@ -25,7 +29,7 @@ export class ShoppingCart {
   get totalPrice() {
     return this.items
       .map(v => v.totalPrice)
-      .reduce((prev = 0, curr) => prev + curr);
+      .reduce((prev = 0, curr) => prev + curr, 0);
   }
 
   getQuantity(product: Product) {
