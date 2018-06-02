@@ -1,4 +1,5 @@
 import { ShoppingCartItem } from './shopping-cart-item';
+import { Product } from './product';
 
 export class ShoppingCart {
   items: ShoppingCartItem[] = [];
@@ -25,5 +26,10 @@ export class ShoppingCart {
     return this.items
       .map(v => v.totalPrice)
       .reduce((prev = 0, curr) => prev + curr);
+  }
+
+  getQuantity(product: Product) {
+    const item = this.itemsMap[product.$key];
+    return item ? item.quantity : 0;
   }
 }
