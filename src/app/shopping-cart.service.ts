@@ -6,6 +6,7 @@ import {
 import { Product } from './models/product';
 import 'rxjs/add/operator/take';
 import { ShoppingCart } from './models/shopping-cart';
+import { Observable } from 'rxjs/Observable';
 
 @Injectable()
 export class ShoppingCartService {
@@ -17,9 +18,11 @@ export class ShoppingCartService {
       .push({ dateCreated: new Date().getTime() });
   }
 
-  async getCart(): Promise<FirebaseObjectObservable<ShoppingCart>> {
+  async getCart(): Promise<Observable<ShoppingCart>> {
     const cartId = await this.getOrCreateCartId();
-    return this.db.object('/shopping-carts/' + cartId);
+    return this.db
+      .object('/shopping-carts/' + cartId)
+      .map(cart => new ShoppingCart(cart.items));
   }
 
   private getItem(cartId: string, productId: string) {

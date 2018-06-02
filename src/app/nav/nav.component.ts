@@ -3,6 +3,8 @@ import { AuthService } from '../auth.service';
 import { AppUser } from '../models/app-user';
 import { Subscription } from 'rxjs/Subscription';
 import { ShoppingCartService } from '../shopping-cart.service';
+import { ShoppingCart } from '../models/shopping-cart';
+import { Observable } from 'rxjs/Observable';
 
 @Component({
   selector: 'app-nav',
@@ -12,7 +14,7 @@ import { ShoppingCartService } from '../shopping-cart.service';
 export class NavComponent implements OnInit, OnDestroy {
   isNavCollapsed = false;
   appUser: AppUser;
-  shoppingCartItemCount: number;
+  cart$: Observable<ShoppingCart>;
   appUserSubscription: Subscription;
   cartSubscription: Subscription;
 
@@ -26,14 +28,7 @@ export class NavComponent implements OnInit, OnDestroy {
       appUser => (this.appUser = appUser)
     );
 
-    const cart$ = await this.cartService.getCart();
-    cart$.subscribe(cart => {
-      this.shoppingCartItemCount = 0;
-      for (const productId in cart.items) {
-        if (cart.items.hasOwnProperty(productId))
-          this.shoppingCartItemCount += cart.items[productId].quantity;
-      }
-    });
+    this.cart$ = await this.cartService.getCart();
   }
 
   logout() {
