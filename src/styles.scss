@@ -1,0 +1,34 @@
+/* You can add global styles to this file, and also import other style files */
+body {
+  padding-top: 80px;
+}
+.dropdown-toggle,
+.navbar-nav a {
+  cursor: pointer;
+}
+
+.navbar {
+  border-bottom: solid 3px #aaa;
+  background-color: #2a662a;
+}
+
+.list-group-item.active,
+.btn-primary {
+  background-color: #2a662a;
+  border-color: #2a662a;
+
+  &:hover {
+    background-color: #68bd68;
+    border-color: #68bd68;
+  }
+}
+
+.btn-secondary {
+  background-color: #ffc107;
+  border-color: #ffc107;
+
+  &:hover {
+    background-color: #836408;
+    border-color: #836408;
+  }
+}
