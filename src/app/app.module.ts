@@ -13,15 +13,14 @@ import { environment } from '../environments/environment';
 import { AdminModule } from './admin/admin.module';
 import { AppComponent } from './app.component';
 import { appRoutes } from './app.routes';
-import { HomeComponent } from './home/home.component';
-import { LoginComponent } from './login/login.component';
-import { NavComponent } from './nav/nav.component';
+import { CoreModule } from './core/core.module';
 import { ShoppingModule } from './shopping/shopping.module';
 
 @NgModule({
-  declarations: [AppComponent, NavComponent, HomeComponent, LoginComponent],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
+    CoreModule,
     AdminModule,
     SharedModule,
     ShoppingModule,
