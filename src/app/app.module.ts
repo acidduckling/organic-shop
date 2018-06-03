@@ -13,37 +13,18 @@ import { environment } from '../environments/environment';
 import { AdminModule } from './admin/admin.module';
 import { AppComponent } from './app.component';
 import { appRoutes } from './app.routes';
-import { CheckOutComponent } from './check-out/check-out.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
-import { MyOrdersComponent } from './my-orders/my-orders.component';
 import { NavComponent } from './nav/nav.component';
-import { OrderSuccessComponent } from './order-success/order-success.component';
-import { ProductFilterComponent } from './products/product-filter/product-filter.component';
-import { ProductsComponent } from './products/products.component';
-import { ShippingFormComponent } from './shipping-form/shipping-form.component';
-import { ShoppingCartSummaryComponent } from './shopping-cart-summary/shopping-cart-summary.component';
-import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
+import { ShoppingModule } from './shopping/shopping.module';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    NavComponent,
-    ShoppingCartComponent,
-    HomeComponent,
-    ProductsComponent,
-    CheckOutComponent,
-    OrderSuccessComponent,
-    MyOrdersComponent,
-    LoginComponent,
-    ProductFilterComponent,
-    ShoppingCartSummaryComponent,
-    ShippingFormComponent
-  ],
+  declarations: [AppComponent, NavComponent, HomeComponent, LoginComponent],
   imports: [
     BrowserModule,
     AdminModule,
     SharedModule,
+    ShoppingModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
     AngularFireAuthModule,
