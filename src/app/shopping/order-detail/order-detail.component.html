@@ -1,0 +1,29 @@
+<h2>Order Details</h2>
+<div *ngIf="order$ | async as order">
+  <div class="row">
+    <div class="col-12">
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item bg-dark text-light">
+          <div class="row">
+            <div class="col-12"><strong>Date:</strong> {{ order.datePlaced | date }}</div>
+          </div>
+        </li>
+        <li *ngFor="let item of order.items" class="list-group-item bg-light">
+          <div class="row">
+            <div class="col-2">{{ item.quantity }}</div>
+            <div class="col-8">{{ item.product.title }} ({{ item.product.price | currency:'USD':'symbol' }} each)</div>
+            <div class="col-2 text-right">{{ item.totalPrice | currency:'USD':'symbol' }}</div>
+          </div>
+        </li>
+        <li class="list-group-item bg-dark text-light">
+          <div class="row">
+            <div class="col-10 text-right font-weight-bold">Total Price:</div>
+            <div class="col-2 font-weight-bold text-right">{{ order.orderPrice | currency:'USD':'symbol' }}</div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <a class="btn btn-primary mt-3 float-right" routerLink="/my/orders">Back to My Orders</a>
+</div>

@@ -17,8 +17,12 @@ export class OrderService {
     return result;
   }
 
-  getOrders() {
+  getAll() {
     return this.db.list('/orders');
+  }
+
+  get(orderId: string): Observable<Order> {
+    return this.db.object('/orders/' + orderId);
   }
 
   getOrdersByUser(userId: string): Observable<Order[]> {

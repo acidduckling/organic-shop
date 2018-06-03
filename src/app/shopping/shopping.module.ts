@@ -12,6 +12,7 @@ import { ShippingFormComponent } from './components/shipping-form/shipping-form.
 import { ShoppingCartSummaryComponent } from './components/shopping-cart-summary/shopping-cart-summary.component';
 import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.component';
 import { shoppingRoutes } from './shopping.routes';
+import { OrderDetailComponent } from './order-detail/order-detail.component';
 
 @NgModule({
   imports: [SharedModule, RouterModule.forChild(shoppingRoutes)],
@@ -23,7 +24,8 @@ import { shoppingRoutes } from './shopping.routes';
     MyOrdersComponent,
     ProductFilterComponent,
     ShoppingCartSummaryComponent,
-    ShippingFormComponent
+    ShippingFormComponent,
+    OrderDetailComponent
   ]
 })
 export class ShoppingModule {}

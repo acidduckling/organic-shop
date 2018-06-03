@@ -4,6 +4,7 @@ import { ShoppingCart } from './shopping-cart';
 export class Order {
   datePlaced: number;
   items: any[];
+  orderPrice: number;
 
   constructor(
     public userId: string,
@@ -23,5 +24,7 @@ export class Order {
         totalPrice: i.totalPrice
       };
     });
+
+    this.orderPrice = cart.totalPrice;
   }
 }

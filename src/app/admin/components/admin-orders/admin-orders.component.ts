@@ -13,6 +13,6 @@ export class AdminOrdersComponent {
   orders$: Observable<Order[]>;
 
   constructor(private orderService: OrderService) {
-    this.orders$ = orderService.getOrders();
+    this.orders$ = orderService.getAll();
   }
 }

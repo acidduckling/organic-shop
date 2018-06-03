@@ -5,6 +5,7 @@ import { MyOrdersComponent } from './components/my-orders/my-orders.component';
 import { OrderSuccessComponent } from './components/order-success/order-success.component';
 import { ProductsComponent } from './components/products/products.component';
 import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.component';
+import { OrderDetailComponent } from './order-detail/order-detail.component';
 
 export const shoppingRoutes: Routes = [
   /* Anonymous routes */
@@ -25,6 +26,11 @@ export const shoppingRoutes: Routes = [
   {
     path: 'order-success/:id',
     component: OrderSuccessComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'my/orders/:id',
+    component: OrderDetailComponent,
     canActivate: [AuthGuard]
   },
   {

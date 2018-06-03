@@ -2,7 +2,7 @@
   <div class="container">
 
     <a class="navbar-brand" routerLink="/">
-      <i class="fa fa-leaf" aria-hidden="true"></i>
+      <i class="fa fa-leaf mr-5" aria-hidden="true"></i>
     </a>
 
     <button class="navbar-toggler" type="button" (click)="isNavCollapsed = !isNavCollapsed" aria-controls="navbarSupportedContent"
@@ -15,7 +15,7 @@
 
         <li class="nav-item">
           <a class="nav-link" routerLink="/shopping-cart">
-            <i class="fa fa-shopping-cart"></i>
+            <i class="fa fa-shopping-cart mr-3"></i>
             <span class="badge badge-warning badge-pill" *ngIf="cart$ | async as cart">
               {{ cart.totalItemsCount }}
             </span>

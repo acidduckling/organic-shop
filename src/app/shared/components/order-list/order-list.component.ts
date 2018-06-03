@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { Order } from 'shared/models/order';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-order-list',
@@ -8,9 +9,9 @@ import { Order } from 'shared/models/order';
   styleUrls: ['./order-list.component.css']
 })
 export class OrderListComponent implements OnInit {
-  @Input() orders$: Observable<Order[]>;
+  @Input() orders$: Observable<any[]>;
 
-  constructor() {}
+  constructor(private router: Router ) {}
 
   ngOnInit() {}
 }
