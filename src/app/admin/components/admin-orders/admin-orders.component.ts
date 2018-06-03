@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { OrderService } from '../../order.service';
-import { Order } from '../../models/order';
+import { OrderService } from 'shared/services/order.service';
+import { Order } from 'shared/models/order';
 import { Observable } from 'rxjs/Observable';
 import { FirebaseListObservable } from 'angularfire2/database';
 

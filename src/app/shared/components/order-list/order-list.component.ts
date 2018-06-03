@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
-import { Order } from '../models/order';
+import { Order } from 'shared/models/order';
 
 @Component({
   selector: 'app-order-list',

@@ -5,10 +5,10 @@ import {
   RouterStateSnapshot
 } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
-import { AuthService } from './auth.service';
+import { AuthService } from 'shared/services/auth.service';
 import 'rxjs/add/operator/switchMap';
 import 'rxjs/add/operator/map';
-import { UserService } from './user.service';
+import { UserService } from 'shared/services/user.service';
 
 @Injectable()
 export class AdminAuthGuard implements CanActivate {
