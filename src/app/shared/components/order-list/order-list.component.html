@@ -1,5 +1,5 @@
-<table class="table">
-  <thead>
+<table class="table table-striped">
+  <thead class="thead-dark">
     <tr>
       <th>Customer</th>
       <th>Date</th>
@@ -10,7 +10,7 @@
     <tr *ngFor="let order of orders$ | async">
       <td>{{ order.shipping.name }}</td>
       <td>{{ order.datePlaced | date }}</td>
-      <td>
+      <td class="text-right">
           <a [routerLink]="['/my/orders/', order.$key]">View</a>
       </td>
     </tr>

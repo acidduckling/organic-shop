@@ -1,0 +1,9 @@
+.alert-success {
+  line-height: 84px;
+  padding-left: 120px;
+}
+.fa-check-circle-o {
+  position: absolute;
+  left: 20px;
+  font-size: 84px;
+}

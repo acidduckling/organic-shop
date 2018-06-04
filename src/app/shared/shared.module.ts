@@ -17,6 +17,7 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { RouterModule } from '@angular/router';
+import { EnumToArrayPipe } from 'shared/pipes/enum-to-array.pipe';
 
 @NgModule({
   imports: [
@@ -32,7 +33,8 @@ import { RouterModule } from '@angular/router';
   declarations: [
     ProductCardComponent,
     ProductQuantityComponent,
-    OrderListComponent
+    OrderListComponent,
+    EnumToArrayPipe
   ],
   exports: [
     CommonModule,
@@ -44,7 +46,8 @@ import { RouterModule } from '@angular/router';
     NgbModule,
     ProductCardComponent,
     ProductQuantityComponent,
-    OrderListComponent
+    OrderListComponent,
+    EnumToArrayPipe
   ],
   providers: [
     AuthService,

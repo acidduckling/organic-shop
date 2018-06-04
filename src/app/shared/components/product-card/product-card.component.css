@@ -1,6 +1,12 @@
 .card {
   margin-bottom: 30px;
 }
+
+.card-image-top {
+  height: 250px;
+  background-size: cover;
+}
+
 .card-footer {
   padding: 0;
 }

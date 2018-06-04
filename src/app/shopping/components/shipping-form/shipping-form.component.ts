@@ -5,6 +5,7 @@ import { Order } from 'shared/models/order';
 import { Router } from '@angular/router';
 import { OrderService } from 'shared/services/order.service';
 import { ShoppingCart } from 'shared/models/shopping-cart';
+import { Shipping, State } from 'shared/models/shipping';
 
 @Component({
   selector: 'app-shipping-form',
@@ -16,7 +17,8 @@ export class ShippingFormComponent implements OnInit, OnDestroy {
 
   userId: string;
   userSubscription: Subscription;
-  shipping: any = {};
+  shipping = {} as Shipping;
+  states = State;
 
   constructor(
     private authService: AuthService,
